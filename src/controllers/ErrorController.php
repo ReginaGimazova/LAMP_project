@@ -3,10 +3,10 @@
  * Created by PhpStorm.
  * User: regagim
  * Date: 02.01.19
- * Time: 14:41
+ * Time: 21:08
  */
 
-class ProductController
+class ErrorController
 {
 
 }

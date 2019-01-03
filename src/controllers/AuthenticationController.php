@@ -1,4 +1,10 @@
 <?php
+
+namespace app\controllers;
+
+use Silex\Application;
+use Symfony\Component\HttpFoundation\Response;
+
 /**
  * Created by PhpStorm.
  * User: regagim
@@ -8,5 +14,11 @@
 
 class AuthenticationController
 {
+    public function index(Application $app){
+        return new Response($app['twig']->render('auth.html.twig'));
+    }
 
+    public function authentication(Application $app){
+        return 'authentication';
+    }
 }
