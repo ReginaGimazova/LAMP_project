@@ -12,8 +12,14 @@
         <form method="post">
             <input name="username" type="text"/>
             <input name="password" type="password"/>
-            <a>Если вы зарегистрированы, перейдите по ссылке</a>
-            <button type="submit">зарегистрироваться</button>
+            <p>Если вы зарегистрированы, перейдите по <a href={{ app.url_generator.generate('auth') }}>
+                     ссылке</a></p>
+            <button type="submit" name="submit">зарегистрироваться</button>
+            {% if errors is defined %}
+                {% for error in errors %}
+                {{ error }}
+                {% endfor %}
+            {% endif %}
         </form>
     </div>
 </body>

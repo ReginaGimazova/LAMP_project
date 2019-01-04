@@ -6,6 +6,8 @@
  * Time: 13:56
  */
 
+namespace app\models;
+
 class User
 {
     private $username;
@@ -40,7 +42,7 @@ class User
      */
     public function setPassword($password): void
     {
-        $this->password = $password;
+        $this->password = md5( $password);
     }
 
 

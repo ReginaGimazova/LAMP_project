@@ -16,7 +16,7 @@ class AuthenticationControllerProvider implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $factory = $app['controllers_factory'];
-        $factory->get("/", "app\controllers\AuthenticationController::index");
+        $factory->get("/", "app\controllers\AuthenticationController::index")->bind('auth');
         $factory->post("/", "app\controllers\AuthenticationController::authentication");
         return $factory;
     }

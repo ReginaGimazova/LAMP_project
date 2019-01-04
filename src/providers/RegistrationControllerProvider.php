@@ -18,7 +18,7 @@ class RegistrationControllerProvider implements ControllerProviderInterface
     public function connect(Application $app)
     {
         $factory = $app["controllers_factory"];
-        $factory->get("/", "app\controllers\RegistrationController::index");
+        $factory->get("/", "app\controllers\RegistrationController::index")->bind('reg');
         $factory->post("/", "app\controllers\RegistrationController::registration");
 
         return $factory;

@@ -12,7 +12,7 @@
     <form method="post">
         <input name="username" type="text"/>
         <input name="password" type="password"/>
-        <a>Если вы еще не зарегистрированы, перейдите по ссылке</a>
+        <p>Если вы еще не зарегистрированы, перейдите по <a href={{ app.url_generator.generate('reg') }}> ссылке </a> </p>
         <button type="submit">войти</button>
     </form>
 </div>
