@@ -1,0 +1,136 @@
+body{
+    font-family: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+    margin: 0;
+    background-color: #EDEDF0;
+
+}
+
+.main{
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+small{
+    font-size: 16px !important;
+    color: #525252;
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    flex: 1;
+    margin-top: 30px;
+}
+
+h2{
+    margin: 0;
+}
+
+aside{
+    margin-top: 30px;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+textarea{
+    margin: 10px 0;
+    width: 100%;
+    min-height: 100px;
+}
+
+.card{
+    background-color: white;
+    width: 80%;
+    margin: 2px 0;
+}
+
+.send_btn{
+    font-size: 16px;
+    background-color: #2a5885;
+    border-radius: 40px;
+    color: white;
+    padding: 10px;
+    width: 200px;
+    border-color: #2a5885;
+    border-width: 0;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 50px 200px;
+}
+
+strong{
+    margin: 10px 0;
+}
+
+.log_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    margin-top: 50px;
+    width: 80%;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    width: 30%;
+}
+
+.form_block{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-items: center;
+}
+input{
+    margin: 10px 0;
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+}
+
+#img{
+    font-size: 16px;
+}
+
+#log_button{
+    background-color: #486c22;
+    color: white;
+    font-size: 17px;
+    padding: 5px 10px;
+    border: none !important;
+    border-radius: 5px;
+}
+
+header{
+    margin: 0;
+    background-color: #2a5885;
+    color: white;
+    height: 100%;
+    padding: 15px;
+}
+
+.title, .title:active, .title:focus{
+    color: white !important;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.subtitle{
+    margin: 50px;
+    text-align: center;
+}

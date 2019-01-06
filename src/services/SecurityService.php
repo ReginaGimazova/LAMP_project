@@ -8,7 +8,7 @@
 
 namespace app\services;
 
-class ValidationService
+class SecurityService
 {
     private $errors = [];
 
@@ -31,6 +31,9 @@ class ValidationService
         return $data;
     }
 
+    public function checkPassword(string $password, string $password_hash){
+        return password_verify($password, $password_hash);
+    }
     /**
      * @return array
      */

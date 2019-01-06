@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/stylesheet.css')}}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <a class="title" href="{{ app.url_generator.generate('main') }}">BLOG</a>
+    </header>
+
+    <h2 class="subtitle">Мои посты</h2>
+    <div class="container">
+
+        <aside>
+            <strong>
+               {{ username }}
+            </strong>
+            <form class="form_block">
+                <input type="text" name="post_name" placeholder="Название поста"/>
+                <textarea name="post_text"></textarea>
+                <button class="send_btn" type="submit" name="send">
+                    Запостить
+                </button>
+            </form>
+        </aside>
+
+        <div class="list">
+            <div class="card">
+                <small>
+                    username
+                </small>
+                <a>
+                    name
+                </a>
+                <p>
+                    article
+                </p>
+            </div>
+
+            <div class="card">
+                <small>
+                    username
+                </small>
+                <a>
+                    name
+                </a>
+                <p>
+                    article
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

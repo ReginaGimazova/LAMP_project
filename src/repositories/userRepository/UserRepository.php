@@ -32,9 +32,19 @@ class UserRepository implements UserRepositoryInterface
         $sql = "select * from users where user_id = :id";
         $stmt = $pdo->prepare($sql);
         $stmt->bindParam(':id', $id);
+        $stmt->execute();
         return $stmt->fetch();
     }
 
+    public function findByName(string $name)
+    {
+        $pdo = DBConnection::pgsqlConnection();
+        $sql = "select * from users where username = :username";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':username', $name);
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 
     public function remove(int $id)
     {

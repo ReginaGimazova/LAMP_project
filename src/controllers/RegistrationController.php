@@ -11,7 +11,7 @@ namespace app\controllers;
 
 use app\models\User;
 use app\repositories\userRepository\UserRepository;
-use app\services\ValidationService;
+use app\services\SecurityService;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +25,7 @@ class RegistrationController
 
     public function registration(Request $request, Application $app){
 
-        $validationService = new ValidationService();
+        $validationService = new SecurityService();
         $userRepository = new UserRepository();
         $data = $request->request->all();
 

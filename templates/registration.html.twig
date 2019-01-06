@@ -3,24 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <title>Registration</title>
-    <link rel="stylesheet" href="../public/css/stylesheet.css">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/stylesheet.css')}}">
+    {% endblock %}
 </head>
 <body>
+    <div class="main">
+        <div class="log_container">
+            <h2>Регистрация</h2>
+            <form method="post" class="form_block">
+                <section>
+                    <strong> Основная информация</strong>
+                    <label> Логин
+                        <input name="username" type="text" required/>
+                    </label>
+                    <label> Пароль
+                        <input name="password" type="password" required/>
+                    </label>
+                </section>
 
-    <div>
-        <h3>Регистрация</h3>
-        <form method="post">
-            <input name="username" type="text"/>
-            <input name="password" type="password"/>
-            <p>Если вы зарегистрированы, перейдите по <a href={{ app.url_generator.generate('auth') }}>
-                     ссылке</a></p>
-            <button type="submit" name="submit">зарегистрироваться</button>
-            {% if errors is defined %}
-                {% for error in errors %}
-                {{ error }}
-                {% endfor %}
-            {% endif %}
-        </form>
+                <section>
+                    <strong> Дополнительная информация </strong>
+                    <input id="img" type="file" name="img"/>
+                </section>
+                <p> Если вы зарегистрированы, перейдите по
+                    <a href={{ app.url_generator.generate('auth') }}> ссылке</a>
+                </p>
+
+                <button type="submit" name="submit" id="log_button">зарегистрироваться</button>
+                {% if errors is defined %}
+                    {% for error in errors %}
+                    {{ error }}
+                    {% endfor %}
+                {% endif %}
+            </form>
+        </div>
     </div>
+    <script>
+        function f() {
+            console.log('here');
+            let img = document.getElementById('img');
+            img.froalaEditor({
+                imageUploadURL: '/home/regagim/sites/LAMP_project/public/upload_image.php',
+                imageUploadParams: {
+                    id: '#img'
+                },
+                imageUploadMethod: 'POST',
+                imageAllowedTypes: ['jpeg', 'jpg', 'png']
+            })
+        }
+    </script>
 </body>
 </html>

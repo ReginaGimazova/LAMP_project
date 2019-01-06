@@ -3,18 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Authentication</title>
-    <link rel="stylesheet" href="../public/css/stylesheet.css">
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('/css/stylesheet.css')}}">
+    {% endblock %}
 </head>
 <body>
-
-<div>
-    <h3>Вход</h3>
-    <form method="post">
-        <input name="username" type="text"/>
-        <input name="password" type="password"/>
-        <p>Если вы еще не зарегистрированы, перейдите по <a href={{ app.url_generator.generate('reg') }}> ссылке </a> </p>
-        <button type="submit">войти</button>
-    </form>
-</div>
+    <div class="main">
+        <div class="log_container">
+            <h2>Вход</h2>
+            <form method="post" class="form_block">
+                <section>
+                    <label>Логин
+                        <input name="username" type="text" required/>
+                    </label>
+                    <label> Пароль
+                        <input name="password" type="password" required/>
+                    </label>
+                </section>
+                <p>Если вы еще не зарегистрированы, перейдите по <a href={{ app.url_generator.generate('reg') }}> ссылке </a> </p>
+                <button type="submit" name="submit" id="log_button">войти</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>
